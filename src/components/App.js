@@ -1,8 +1,9 @@
 import React,{ Component } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   SafeAreaView,
   ScrollView,
-  Dimensions,
+  Dimensions, 
   StatusBar,
   StyleSheet,
   Text,
@@ -10,16 +11,22 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import Home from '../screens/Home'
+import Home from '../screens/Home'; 
+import AppStack from '../routs/app'; 
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
 
 
- const App = () => {
+ const App = (props) => {
 
     return( 
-        <Home />
+          
+          <NavigationContainer>
+           {/* <Home /> */}
+           <AppStack />
+          </NavigationContainer>
+       
     )
 }
 
